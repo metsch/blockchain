@@ -1,4 +1,4 @@
-package at.metsch.blockchain.model;
+package at.metsch.blockchain.block;
 
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
@@ -18,6 +18,7 @@ public class Block implements Serializable {
     private final ArrayList<Transaction> transactions;
     private int index;
     private int proofOfWork;
+
 
     public Block(int index, Long timestamp, int proofOfWork, byte[] parentHash, ArrayList<Transaction> transactions) {
         this.index = index;
@@ -48,8 +49,27 @@ public class Block implements Serializable {
         return blockHash;
     }
 
-    public byte[] getHash() {
-        return hash;
+    public byte[] getParentHash() {
+        return this.parentHash;
     }
 
+    public byte[] getHash() {
+        return this.hash;
+    }
+
+    public Long getTimestamp() {
+        return this.timestamp;
+    }
+
+    public ArrayList<Transaction> getTransactions() {
+        return this.transactions;
+    }
+
+    public int getIndex() {
+        return this.index;
+    }
+
+    public int getProofOfWork() {
+        return this.proofOfWork;
+    }
 }

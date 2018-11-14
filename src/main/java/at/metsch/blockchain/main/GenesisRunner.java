@@ -8,16 +8,12 @@ import java.util.Base64;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Scope;
-import org.springframework.core.task.TaskExecutor;
 import org.springframework.stereotype.Component;
 
-import at.metsch.blockchain.model.Block;
-import at.metsch.blockchain.model.Transaction;
+import at.metsch.blockchain.block.Block;
+import at.metsch.blockchain.block.Transaction;
 
 @Component
 public class GenesisRunner implements ApplicationRunner{
